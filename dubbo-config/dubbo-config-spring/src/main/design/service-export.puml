@@ -1,0 +1,11 @@
+@startuml
+ServiceBean-->ServiceBean:onApplicationEvent()
+ServiceBean-->ServiceConfig:export()
+ServiceConfig-->ServiceConfig:doExport()
+ServiceConfig-->ServiceConfig:doExportUrls()
+ServiceConfig-->ServiceConfig:doExportUrlsFor1Protocol()
+ServiceConfig-->RegistryProtocol:export(Invoker<T> invoker):这里通过ali自己实现的动态代理调到此处。\n【此处dubbo自己生产一堆Java类串，然后编译出代理类】
+RegistryProtocol-->RegistryProtocol:doLocalExport
+RegistryProtocol-->DubboProtocol:openServer(URL url):启动服务接口
+RegistryProtocol-->RegistryProtocol:register():向注册中心注册服务
+@enduml

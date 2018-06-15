@@ -1,0 +1,12 @@
+@startuml
+ReferenceBean-->ReferenceBean:getObject():spring的factoryBean功能
+ReferenceBean-->ReferenceConfig:get():获取代理类.ReferenceConfig\n是ReferenceBean的父类
+ReferenceConfig-->ReferenceConfig:init()
+ReferenceConfig-->ReferenceConfig:createProxy()
+ReferenceConfig-->InvokerInvocationHandler:返回代理类
+note left
+当用户通过spring的bean的方式调用时，
+通过InvokerInvocationHandler的invoke方法
+真正的去执行
+end note
+@enduml
