@@ -21,10 +21,13 @@ import com.alibaba.dubbo.rpc.RpcContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class YohoConsumer {
 
     public static void main(String[] args) {
+
 
         System.setProperty("java.net.preferIPv4Stack", "true");
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"META-INF/spring/yoho-dubbo-demo-consumer.xml"});
@@ -44,6 +47,7 @@ public class YohoConsumer {
 
 
         }
+
 
     }
 }
